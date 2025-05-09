@@ -41,6 +41,3 @@ Just install the extension, open a `.s` file, and start writing Corewar code. Ho
 
 Feel free to submit issues or pull requests!
 
-## License
-
-MIT
