@@ -1,6 +1,8 @@
 
 const vscode = require('vscode');
-const { activate_hover } = require('./extension'); 
+const { activate_hover } = require('./hover'); 
+const { activate_definition } = require('./definition'); 
+
 
 /**
  * @param {vscode.ExtensionContext} context
@@ -8,6 +10,7 @@ const { activate_hover } = require('./extension');
 function activate(context) {
     console.log('Corewar-code activated.\n');
     activate_hover(context)
+    activate_definition(context)
 }
 
 
