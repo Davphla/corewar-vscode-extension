@@ -35,7 +35,7 @@
 					"match": "-?[0-9]+"
 				},
 				{
-					"name": "constant.numeric.indirect",
+					"name": "constant.numeric.language",
 					"match": "%:[a-zA-Z]+[a-zA-Z0-9]*"
 				}
 			]
