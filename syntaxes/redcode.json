@@ -1,0 +1,87 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Redcode",
+	"scopeName": "source.s",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#function"
+		},
+		{
+			"include": "#values"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"values": {
+			"patterns": [
+				{
+					"name": "constant.language.register",
+					"match": "r([1-9]|1[0-6])"
+				},
+				{
+					"name": "constant.numeric.direct",
+					"match": "\\%-?[0-9]+"
+				},
+				{
+					"name": "constant.numeric.indirect",
+					"match": "-?[0-9]+"
+				},
+				{
+					"name": "constant.numeric.indirect",
+					"match": "%:[a-zA-Z]+[a-zA-Z0-9]*"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "entity.name.tag",
+					"match": "\\.\\b(name|comment)"
+				}
+			]
+		},
+		"function": {
+			"patterns": [
+				{
+					"name": "entity.name.type",
+					"match": "[a-zA-Z]+[a-zA-Z0-9]*:"
+				},
+				{
+					"name": "entity.name.function",
+					"match": "\\b(live|ld|st|add|sub|and|or|xor|zjmp|ldi|sti|fork|lld|lldi|lfork|aff)\\b"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.number-sign",
+					"match": "#.*$"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape",
+							"match": "\\\\."
+						}
+					]
+				}
+			]
+		}
+	}
+}

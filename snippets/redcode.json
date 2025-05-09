@@ -1,0 +1,92 @@
+{
+  "add": {
+    "prefix": "add",
+    "body": ["add r${1:1}, r${2:2}, r${3:3}"],
+    "description": "Adds two registers, stores in a third register"
+  },
+  "sub": {
+    "prefix": "sub",
+    "body": ["sub r${1:1}, r${2:2}, r${3:3}"],
+    "description": "Subtracts two registers, stores in a third register"
+  },
+  "and": {
+    "prefix": "and",
+    "body": ["and ${1:arg1}, ${2:arg2}, r${3:3}"],
+    "description": "Performs binary AND on two values"
+  },
+  "or": {
+    "prefix": "or",
+    "body": ["or ${1:arg1}, ${2:arg2}, r${3:3}"],
+    "description": "Performs binary OR on two values"
+  },
+  "xor": {
+    "prefix": "xor",
+    "body": ["xor ${1:arg1}, ${2:arg2}, r${3:3}"],
+    "description": "Performs binary XOR on two values"
+  },
+  "ld": {
+    "prefix": "ld",
+    "body": ["ld ${1:%value}, r${2:1}"],
+    "description": "Loads a value into a register"
+  },
+  "lld": {
+    "prefix": "lld",
+    "body": ["lld ${1:%value}, r${2:1}"],
+    "description": "Loads value into register (no IDX_MOD)"
+  },
+  "ldi": {
+    "prefix": "ldi",
+    "body": ["ldi ${1:arg1}, ${2:arg2}, r${3:3}"],
+    "description": "Loads from address (arg1 + arg2 % IDX_MOD) into r3"
+  },
+  "lldi": {
+    "prefix": "lldi",
+    "body": ["lldi ${1:arg1}, ${2:arg2}, r${3:3}"],
+    "description": "Loads from address (arg1 + arg2) into r3 (no IDX_MOD)"
+  },
+  "st": {
+    "prefix": "st",
+    "body": ["st r${1:1}, ${2:arg}"],
+    "description": "Stores register value to address/register"
+  },
+  "sti": {
+    "prefix": "sti",
+    "body": ["sti r${1:1}, ${2:arg2}, ${3:arg3}"],
+    "description": "Stores register into computed address"
+  },
+  "live": {
+    "prefix": "live",
+    "body": ["live %${1:player_id}"],
+    "description": "Declares a player is alive"
+  },
+  "zjmp": {
+    "prefix": "zjmp",
+    "body": ["zjmp %${1:index}"],
+    "description": "Conditional jump if carry is 1"
+  },
+  "fork": {
+    "prefix": "fork",
+    "body": ["fork %${1:index}"],
+    "description": "Creates a new process at PC + index % IDX_MOD"
+  },
+  "lfork": {
+    "prefix": "lfork",
+    "body": ["lfork %${1:index}"],
+    "description": "Creates a new process at PC + index (no IDX_MOD)"
+  },
+  "aff": {
+    "prefix": "aff",
+    "body": ["aff r${1:1}"],
+    "description": "Displays the ASCII char of the register's value"
+  },
+  ".name": {
+    "prefix": ".name",
+    "body": [".name \"${1:Champion Name}\""],
+    "description": "Sets the champion's name"
+  },
+  ".comment": {
+    "prefix": ".comment",
+    "body": [".comment \"${1:Champion Comment}\""],
+    "description": "Sets the champion's comment"
+  }
+}
