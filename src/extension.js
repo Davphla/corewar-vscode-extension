@@ -3,9 +3,7 @@ const vscode = require('vscode');
 /**
  * @param {vscode.ExtensionContext} context
  */
-function activate(context) {
-	console.log('Corewar-code activated.\n');
-
+function activate_hover(context) {
 	const instructions = new Map([
 		["name", "Reserved to the champion name. It must be under 128 bytes."],
 		["comment", "Reserved to the champion comment. It must be under 2048 bytes."],
@@ -65,13 +63,9 @@ function activate(context) {
 	context.subscriptions.push(
 		vscode.languages.registerHoverProvider('redcode', hoverProvider)
 	);
+
+	
 }
 
-function deactivate() {
-	console.log('Corewar-code deactivated.\n');
-}
 
-module.exports = {
-	activate,
-	deactivate
-};
+module.exports = { activate_hover };

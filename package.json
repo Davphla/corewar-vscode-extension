@@ -5,31 +5,44 @@
 	"version": "1.0.0",
 	"publisher": "David Gozlan",
 	"engines": {
-	  "vscode": "^1.70.0"
+		"vscode": "^1.70.0"
 	},
-	"categories": ["Programming Languages"],
+	"categories": [
+		"Programming Languages"
+	],
+	"keywords": [
+		"Corewar",
+		"Champions"
+	],
+	"main": "./src/main.js",
+	"capabilities": {
+		"hoverProvider": "true"
+	},
 	"contributes": {
-	  "languages": [
-		{
-		  "id": "redcode",
-		  "aliases": ["Redcode"],
-		  "extensions": [".s"],
-		  "configuration": "./language-configuration.json"
-		}
-	  ],
-	  "grammars": [
-		{
-		  "language": "redcode",
-		  "scopeName": "source.s",
-		  "path": "./syntaxes/redcode.json"
-		}
-	  ],
-	  "snippets": [
-		{
-		  "language": "redcode",
-		  "path": "./snippets/redcode.json"
-		}
-	  ]
+		"languages": [
+			{
+				"id": "redcode",
+				"aliases": [
+					"Redcode"
+				],
+				"extensions": [
+					".s"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "redcode",
+				"scopeName": "source.s",
+				"path": "./syntaxes/redcode.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "redcode",
+				"path": "./snippets/redcode.json"
+			}
+		]
 	}
-  }
-  
+}
